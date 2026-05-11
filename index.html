@@ -1,11 +1,183 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Tyler Wang</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tyler Wang | Portfolio</title>
+
+    <!-- 引入外部 CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1>Tyler Wang</h1>
-  <p>這是我的個人作品集網站。</p>
+    <!-- 頁首導覽列 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">Tyler Wang</h1>
+
+            <nav class="nav">
+                <a href="#about">關於我</a>
+                <a href="#skills">技能</a>
+                <a href="#projects">專案</a>
+                <a href="#contact">聯絡</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首頁主視覺 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <p class="eyebrow">Portfolio Website</p>
+
+            <h2>內部系統開發與自動化工具學習者</h2>
+
+            <p class="hero-text">
+                目前為大三學生，同時參與公司內部系統開發與維護。
+                主要接觸 HTML、CSS、JavaScript、Python Flask、Node.js、MySQL，
+                專注於內部系統、報表流程、自動化工具與資料流程改善。
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn primary" href="#projects">查看專案</a>
+                <a class="btn secondary" href="https://github.com/s96405" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">關於我</h2>
+
+            <p class="section-text">
+                我正在學習前後端整合開發，並透過實際公司內部需求累積經驗。
+                目前比較熟悉前端畫面調整、API 串接概念、資料庫查詢、錯誤排查與系統流程理解。
+                專案開發過程中也會使用 AI 輔助，加快理解程式與完成需求。
+            </p>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">技能</h2>
+
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <p>HTML、CSS、JavaScript、Responsive Layout</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <p>Python Flask、Node.js、Express、REST API 概念</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Database</h3>
+                    <p>MySQL、SQLite、SQL Server 查詢概念</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <p>Git、GitHub、VS Code、DBeaver、Excel、RPA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案作品 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">精選專案</h2>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>鈑金報工系統</h3>
+
+                    <p>
+                        用於工廠現場報工，提供製令查詢、良品/不良品數量登錄、
+                        報工紀錄查詢與 Excel 匯出功能。
+                    </p>
+
+                    <div class="tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MySQL</span>
+                        <span>JavaScript</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>工程日報系統</h3>
+
+                    <p>
+                        協助工程部門記錄每日工作內容、專案進度、問題追蹤與報表整理，
+                        提升工作紀錄與查詢效率。
+                    </p>
+
+                    <div class="tags">
+                        <span>Flask</span>
+                        <span>MySQL</span>
+                        <span>SQLAlchemy</span>
+                        <span>ERP</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>RPA 自動化工具</h3>
+
+                    <p>
+                        透過 Python 自動操作網頁與本機資料夾，協助處理重複性流程，
+                        降低人工操作時間。
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>PyAutoGUI</span>
+                        <span>Automation</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 學習紀錄 -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">學習方向</h2>
+
+            <ul class="learning-list">
+                <li>加強 JavaScript 基礎與前端互動能力</li>
+                <li>學習 Flask / Node.js 後端 API 架構</li>
+                <li>練習 SQL 查詢、資料表設計與資料流程理解</li>
+                <li>整理 GitHub 專案，建立工程師作品集</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 聯絡方式 -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">聯絡方式</h2>
+
+            <p class="section-text">
+                歡迎透過 GitHub 查看我的專案紀錄。
+            </p>
+
+            <a class="btn primary" href="https://github.com/s96405" target="_blank">
+                前往 GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <p>© 2026 Tyler Wang. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>

@@ -7,7 +7,6 @@
 
     <title>Tyler Wang | Portfolio</title>
 
-    <!-- 引入外部 CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,6 +20,7 @@
                 <a href="#about">關於我</a>
                 <a href="#skills">技能</a>
                 <a href="#projects">專案</a>
+                <a href="#learning">學習方向</a>
                 <a href="#contact">聯絡</a>
             </nav>
         </div>
@@ -31,12 +31,10 @@
         <div class="container hero-content">
             <p class="eyebrow">Portfolio Website</p>
 
-            <h2>內部系統開發與自動化工具學習者</h2>
+            <h2>從實際專案中學習系統開發</h2>
 
             <p class="hero-text">
-                目前為大三學生，同時參與公司內部系統開發與維護。
-                主要接觸 HTML、CSS、JavaScript、Python Flask、Node.js、MySQL，
-                專注於內部系統、報表流程、自動化工具與資料流程改善。
+                透過內部系統、專案追蹤與自動化工具，累積前端、後端、資料庫與流程改善的實作經驗。
             </p>
 
             <div class="hero-actions">
@@ -52,9 +50,14 @@
             <h2 class="section-title">關於我</h2>
 
             <p class="section-text">
-                我正在學習前後端整合開發，並透過實際公司內部需求累積經驗。
-                目前比較熟悉前端畫面調整、API 串接概念、資料庫查詢、錯誤排查與系統流程理解。
-                專案開發過程中也會使用 AI 輔助，加快理解程式與完成需求。
+                我目前是大三學生，平時在工作中接觸公司內部系統的調整、測試與維護。
+                目前正在學習 HTML、CSS、JavaScript、Python Flask、Node.js 與資料庫基礎，
+                並透過實際專案慢慢理解前端、後端、資料庫之間的資料流程。
+            </p>
+
+            <p class="section-text">
+                很多功能一開始並不是完全理解，但會透過閱讀程式、查詢資料、
+                測試流程與 AI 輔助，逐步理解系統如何運作。
             </p>
         </div>
     </section>
@@ -67,22 +70,34 @@
             <div class="skill-grid">
                 <div class="skill-card">
                     <h3>Frontend</h3>
-                    <p>HTML、CSS、JavaScript、Responsive Layout</p>
+                    <p>
+                        HTML、CSS、JavaScript 基礎，正在練習響應式版面、
+                        表單操作與前端資料顯示。
+                    </p>
                 </div>
 
                 <div class="skill-card">
                     <h3>Backend</h3>
-                    <p>Python Flask、Node.js、Express、REST API 概念</p>
+                    <p>
+                        Python Flask、Node.js、Express 基礎，
+                        正在理解路由、API、請求與回應的流程。
+                    </p>
                 </div>
 
                 <div class="skill-card">
                     <h3>Database</h3>
-                    <p>MySQL、SQLite、SQL Server 查詢概念</p>
+                    <p>
+                        MySQL、SQLite、SQL 查詢基礎，
+                        正在學習資料表關聯、查詢條件與資料流程。
+                    </p>
                 </div>
 
                 <div class="skill-card">
                     <h3>Tools</h3>
-                    <p>Git、GitHub、VS Code、DBeaver、Excel、RPA</p>
+                    <p>
+                        Git、GitHub、VS Code、DBeaver、Excel，
+                        也有接觸 Python 自動化與 RPA 工具。
+                    </p>
                 </div>
             </div>
         </div>
@@ -93,14 +108,30 @@
         <div class="container">
             <h2 class="section-title">精選專案</h2>
 
+            <p class="section-text project-intro">
+                以下專案多數來自工作中接觸到的內部系統需求。
+                目前我主要參與的部分包含需求理解、畫面調整、
+                功能測試、資料流程理解與錯誤排查。
+            </p>
+
             <div class="project-grid">
                 <article class="project-card">
                     <h3>鈑金報工系統</h3>
 
                     <p>
-                        用於工廠現場報工，提供製令查詢、良品/不良品數量登錄、
-                        報工紀錄查詢與 Excel 匯出功能。
+                        參與公司內部報工流程改善相關專案，主要接觸製令查詢、
+                        良品/不良品數量登錄、報工紀錄查詢與 Excel 匯出等功能。
+                        透過這個專案學習前端表單、後端 API 與資料庫之間的資料流程。
                     </p>
+
+                    <div class="project-detail">
+                        <h4>學習內容</h4>
+                        <ul>
+                            <li>理解登入、報工、查詢與匯出的基本流程</li>
+                            <li>練習看懂前端送資料到後端 API 的方式</li>
+                            <li>接觸 MySQL 資料查詢與報表資料整理</li>
+                        </ul>
+                    </div>
 
                     <div class="tags">
                         <span>Node.js</span>
@@ -111,18 +142,28 @@
                 </article>
 
                 <article class="project-card">
-                    <h3>工程日報系統</h3>
+                    <h3>專案進度與工作紀錄管理系統</h3>
 
                     <p>
-                        協助工程部門記錄每日工作內容、專案進度、問題追蹤與報表整理，
-                        提升工作紀錄與查詢效率。
+                        參與工程部門工作紀錄與專案追蹤相關系統，功能包含每日工作內容填寫、
+                        專案進度紀錄、問題追蹤、延期紀錄與報表查詢。
+                        透過此專案學習 Flask、資料表設計與後端邏輯的基本概念。
                     </p>
+
+                    <div class="project-detail">
+                        <h4>學習內容</h4>
+                        <ul>
+                            <li>理解工作日報與專案進度之間的關聯</li>
+                            <li>接觸 Flask 路由、表單送出與資料查詢</li>
+                            <li>學習如何追蹤專案任務、進度與延期狀態</li>
+                        </ul>
+                    </div>
 
                     <div class="tags">
                         <span>Flask</span>
                         <span>MySQL</span>
                         <span>SQLAlchemy</span>
-                        <span>ERP</span>
+                        <span>ERP 概念</span>
                     </div>
                 </article>
 
@@ -130,9 +171,19 @@
                     <h3>RPA 自動化工具</h3>
 
                     <p>
-                        透過 Python 自動操作網頁與本機資料夾，協助處理重複性流程，
-                        降低人工操作時間。
+                        練習使用 Python 製作簡單的自動化工具，嘗試操作網頁與本機檔案，
+                        協助理解重複性工作如何透過程式減少人工操作。
+                        目前仍在學習如何讓流程更穩定、降低環境差異造成的錯誤。
                     </p>
+
+                    <div class="project-detail">
+                        <h4>學習內容</h4>
+                        <ul>
+                            <li>練習 Python 操作檔案、Excel 與網頁流程</li>
+                            <li>理解自動化流程需要處理例外狀況</li>
+                            <li>學習打包工具與不同電腦環境的相容問題</li>
+                        </ul>
+                    </div>
 
                     <div class="tags">
                         <span>Python</span>
@@ -145,16 +196,17 @@
         </div>
     </section>
 
-    <!-- 學習紀錄 -->
-    <section class="section section-light">
+    <!-- 學習方向 -->
+    <section id="learning" class="section section-light">
         <div class="container">
             <h2 class="section-title">學習方向</h2>
 
             <ul class="learning-list">
-                <li>加強 JavaScript 基礎與前端互動能力</li>
-                <li>學習 Flask / Node.js 後端 API 架構</li>
-                <li>練習 SQL 查詢、資料表設計與資料流程理解</li>
-                <li>整理 GitHub 專案，建立工程師作品集</li>
+                <li>補強 JavaScript 基礎，提升前端互動與資料處理能力</li>
+                <li>學習 Flask / Node.js 後端 API 的基本寫法與流程</li>
+                <li>練習 SQL 查詢、資料表關聯與資料庫基本設計</li>
+                <li>透過 GitHub 整理學習紀錄與專案說明</li>
+                <li>學習如何閱讀、修改與維護既有系統程式碼</li>
             </ul>
         </div>
     </section>
@@ -165,7 +217,7 @@
             <h2 class="section-title">聯絡方式</h2>
 
             <p class="section-text">
-                歡迎透過 GitHub 查看我的專案紀錄。
+                目前正在整理學習紀錄與專案內容，歡迎透過 GitHub 查看我的練習與專案紀錄。
             </p>
 
             <a class="btn primary" href="https://github.com/s96405" target="_blank">

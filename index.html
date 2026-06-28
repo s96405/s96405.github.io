@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tyler Wang | Portfolio</title>
+    <title>Tyler Wang | 前端練習作品集</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -29,18 +30,17 @@
     <!-- 首頁主視覺 -->
     <section class="hero">
         <div class="container hero-content">
-            <p class="eyebrow">Portfolio Website</p>
+            <p class="eyebrow">JavaScript 小作品展示</p>
 
-            <h2>Internal Systems & Process Automation</h2>
+            <h2>前端練習作品集</h2>
 
             <p class="hero-text">
-                專注於公司內部系統、資料流程與自動化工具的實作整理，
-                透過前端介面、後端 API、資料庫查詢與流程測試，協助將工作流程轉換為可維護的系統。
+                整理我目前學習 HTML、CSS、JavaScript 過程中完成的小作品，
+                包含 TodoList、API 資料渲染、搜尋、篩選與排序練習。
             </p>
 
             <div class="hero-actions">
-                <a class="btn primary" href="#projects">查看專案</a>
-                <a class="btn secondary" href="https://github.com/s96405" target="_blank">GitHub</a>
+                <a class="btn primary" href="#projects">查看作品</a>
             </div>
         </div>
     </section>
@@ -51,16 +51,10 @@
             <h2 class="section-title">關於我</h2>
 
             <p class="section-text">
-                我目前就讀台中科技大學資訊工程系，並在工作中參與公司內部系統的調整、
-                測試與維護。主要接觸的範圍包含報工流程、工程專案追蹤、資料查詢、
-                報表整理與 RPA 自動化工具。
-            </p>
-
-            <p class="section-text">
-                在專案實作中，我關注的不只是畫面呈現，而是完整的資料流與系統流程：
-                從使用者輸入、前端送出資料、後端 API 處理、資料庫儲存與查詢，
-                到最後產生報表與操作結果。透過實際需求與系統維護經驗，
-                持續累積前後端整合、資料庫操作與問題排查能力。
+                我目前正在學習前端開發，主要練習 HTML、CSS、JavaScript，
+                並透過小作品理解 DOM 操作、事件監聽、陣列資料處理、
+                API 串接與畫面渲染流程。作品集目前會以學習作品為主，
+                持續補強基礎能力。
             </p>
         </div>
     </section>
@@ -72,34 +66,30 @@
 
             <div class="skill-grid">
                 <div class="skill-card">
-                    <h3>Frontend</h3>
+                    <h3>HTML / CSS</h3>
                     <p>
-                        HTML、CSS、JavaScript，負責表單頁面、查詢條件、
-                        資料表格與響應式版面調整，讓系統操作流程更清楚。
+                        練習網頁結構、排版、RWD、卡片版型與基本視覺調整。
                     </p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Backend</h3>
+                    <h3>JavaScript</h3>
                     <p>
-                        Python Flask、Node.js、Express，理解路由設計、
-                        API 請求回應、表單處理、資料驗證與錯誤排查流程。
+                        練習事件監聽、DOM 操作、陣列方法、資料篩選、排序與畫面更新。
                     </p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Database</h3>
+                    <h3>API 串接</h3>
                     <p>
-                        MySQL、SQLite、SQL Server 查詢概念，處理資料查詢、
-                        條件篩選、資料表關聯與報表資料來源整理。
+                        使用 axios / fetch 取得資料，並將資料渲染到畫面上。
                     </p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Workflow & Tools</h3>
+                    <h3>作品整理</h3>
                     <p>
-                        Git、GitHub、VS Code、DBeaver、Excel、RPA 與 AI 工具，
-                        用於版本管理、資料檢查、流程測試與開發輔助。
+                        整理練習作品、紀錄學習過程，並逐步補充 README 與專案說明。
                     </p>
                 </div>
             </div>
@@ -112,90 +102,88 @@
             <h2 class="section-title">精選專案</h2>
 
             <p class="section-text project-intro">
-                以下專案主要來自公司內部流程改善與系統維護需求，
-                內容涵蓋報工流程、專案追蹤、資料查詢與自動化作業。
+                這裡先放目前整理好的兩個小作品，主要是練習 JavaScript、
+                API 資料處理和畫面更新。
             </p>
 
             <div class="project-grid">
                 <!-- 專案 1 -->
                 <article class="project-card">
-                    <h3>工廠現場報工與報表查詢系統</h3>
+                    <span class="card-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </span>
+
+                    <span class="project-type">練習作品</span>
+
+                    <h3>TodoList 待辦清單</h3>
 
                     <p>
-                        將現場報工流程網頁化，支援製令查詢、良品與不良品數量登錄、
-                        報工紀錄查詢、條件篩選與 Excel 匯出，降低人工彙整資料的時間成本。
+                        練習新增、刪除、完成狀態切換、Tab 篩選與清除已完成項目。
                     </p>
 
                     <div class="project-detail">
-                        <h4>負責與接觸內容</h4>
+                        <h4>負責與練習內容</h4>
                         <ul>
-                            <li>報工表單與查詢畫面調整</li>
-                            <li>登入與角色權限流程測試</li>
-                            <li>製令查詢與報工 API 資料流程理解</li>
-                            <li>MySQL 報工紀錄查詢與報表資料整理</li>
+                            <li>新增待辦事項</li>
+                            <li>checkbox 切換完成狀態</li>
+                            <li>全部 / 已完成 / 未完成篩選</li>
+                            <li>清除已完成項目</li>
+                            <li>剩餘待辦數量計算</li>
                         </ul>
                     </div>
 
                     <div class="tags">
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>MySQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
                         <span>JavaScript</span>
+                        <span>DOM</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a class="btn primary project-btn" href="https://tylerwang.me/TODOLIST/" target="_blank">
+                            查看作品
+                        </a>
                     </div>
                 </article>
 
                 <!-- 專案 2 -->
                 <article class="project-card">
-                    <h3>工程專案進度與工作紀錄系統</h3>
+                    <span class="card-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </span>
+
+                    <span class="project-type">API 串接</span>
+
+                    <h3>農產品比價查詢</h3>
 
                     <p>
-                        整合工程人員每日工作紀錄與專案任務追蹤，
-                        集中管理工作內容、專案進度、問題紀錄與延期資訊，
-                        協助後續查詢、統計與報表整理。
+                        使用 axios 串接公開 JSON 資料，練習作物名稱搜尋、
+                        分類篩選、價格排序與表格渲染。
                     </p>
 
                     <div class="project-detail">
-                        <h4>負責與接觸內容</h4>
+                        <h4>負責與練習內容</h4>
                         <ul>
-                            <li>工作紀錄填寫與查詢流程測試</li>
-                            <li>專案任務、進度與延期狀態整理</li>
-                            <li>Flask 路由與表單處理邏輯理解</li>
-                            <li>資料表關聯與查詢結果檢查</li>
+                            <li>axios 取得資料</li>
+                            <li>作物名稱搜尋</li>
+                            <li>分類按鈕切換</li>
+                            <li>select 排序</li>
+                            <li>表頭點擊排序</li>
+                            <li>currentData 狀態管理</li>
                         </ul>
                     </div>
 
                     <div class="tags">
-                        <span>Flask</span>
-                        <span>MySQL</span>
-                        <span>SQLAlchemy</span>
-                        <span>ERP</span>
-                    </div>
-                </article>
-
-                <!-- 專案 3 -->
-                <article class="project-card">
-                    <h3>QMS 圖面更新 RPA 自動化工具</h3>
-
-                    <p>
-                        針對重複性的網頁操作、Excel 資料讀取與資料夾檔案比對流程，
-                        使用 Python 製作自動化工具，協助減少人工操作並提升流程一致性。
-                    </p>
-
-                    <div class="project-detail">
-                        <h4>負責與接觸內容</h4>
-                        <ul>
-                            <li>Excel 與本機檔案讀取流程</li>
-                            <li>Selenium / PyAutoGUI 網頁操作</li>
-                            <li>流程判斷、錯誤紀錄與操作穩定性處理</li>
-                            <li>PyInstaller 打包與執行環境測試</li>
-                        </ul>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Axios</span>
                     </div>
 
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Selenium</span>
-                        <span>PyAutoGUI</span>
-                        <span>Automation</span>
+                    <div class="project-links">
+                        <a class="btn primary project-btn" href="https://tylerwang.me/Agricultural-Products-Comparison-Website/" target="_blank">
+                            查看作品
+                        </a>
                     </div>
                 </article>
             </div>
@@ -208,54 +196,66 @@
             <h2 class="section-title">專注方向</h2>
 
             <p class="section-text project-intro">
-                目前以內部系統開發、資料流程整理與自動化工具為主要實作方向，
-                並透過 GitHub 持續整理專案文件、架構說明與學習紀錄。
+                目前先把基礎練熟，再慢慢整理更多小作品。
             </p>
 
             <div class="info-grid">
                 <div class="info-card">
-                    <h3>系統流程</h3>
+                    <h3>JavaScript 基礎</h3>
                     <ul>
-                        <li>前端表單輸入與資料顯示</li>
-                        <li>後端 API 接收與資料處理</li>
-                        <li>資料庫儲存、查詢與篩選</li>
-                        <li>報表匯出與結果呈現</li>
-                        <li>功能測試與錯誤排查</li>
+                        <li>DOM 操作</li>
+                        <li>事件監聽</li>
+                        <li>陣列方法</li>
+                        <li>資料篩選與排序</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
-                    <h3>技術補強</h3>
+                    <h3>API 串接與資料處理</h3>
                     <ul>
-                        <li>JavaScript 互動邏輯與資料處理</li>
-                        <li>Flask / Node.js API 架構</li>
-                        <li>SQL 查詢、JOIN 與資料表關聯</li>
-                        <li>既有系統程式碼閱讀與維護</li>
-                        <li>GitHub 專案版本與文件管理</li>
+                        <li>axios / fetch 使用</li>
+                        <li>JSON 資料讀取</li>
+                        <li>資料狀態管理</li>
+                        <li>畫面資料渲染</li>
                     </ul>
                 </div>
 
-                <div id="contact" class="info-card">
-                    <h3>專案整理</h3>
+                <div class="info-card">
+                    <h3>前端切版與 RWD</h3>
                     <ul>
-                        <li>README 與功能說明整理</li>
-                        <li>移除敏感資料與連線資訊</li>
-                        <li>補充 .env.example 與範例設定</li>
-                        <li>整理系統截圖與專案背景</li>
-                        <li>建立可閱讀的作品集內容</li>
+                        <li>區塊切版</li>
+                        <li>卡片排版</li>
+                        <li>導覽列設計</li>
+                        <li>手機版畫面調整</li>
                     </ul>
-
-                    <a class="btn primary info-btn" href="https://github.com/s96405" target="_blank">
-                        前往 GitHub
-                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我 -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">聯絡我</h2>
+
+            <p class="section-text contact-text">
+                目前持續整理前端練習作品，歡迎透過 Instagram 或 Email 與我聯繫。
+            </p>
+
+            <div class="contact-actions">
+                <a class="btn primary" href="https://www.instagram.com/1ul_1025" target="_blank">
+                    Instagram
+                </a>
+                <a class="btn secondary" href="mailto:your-email@example.com">
+                    寄信給我
+                </a>
             </div>
         </div>
     </section>
 
     <!-- 頁尾 -->
     <footer class="footer">
-        <p>© 2026 Tyler Wang. All rights reserved.</p>
+        <p>© 2026 Tyler Wang. 個人作品集網站</p>
     </footer>
 </body>
 

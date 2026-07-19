@@ -1,262 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Tyler Wang | 前端練習作品集</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FlowForge 提供 Excel 自動化、ERP／MES 整合、AI 工作流程、RPA、企業內部系統與資料分析服務。">
+  <meta name="theme-color" content="#07110f">
+  <title>FlowForge｜企業流程自動化與客製化系統開發</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <!-- 頁首導覽列 -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <h1 class="logo">Tyler Wang</h1>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
 
-            <nav class="nav">
-                <a href="#about">關於我</a>
-                <a href="#skills">能力</a>
-                <a href="#projects">專案</a>
-                <a href="#focus">專注方向</a>
-                <a href="#contact">聯絡</a>
-            </nav>
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="FlowForge 首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>FlowForge</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟導覽選單">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="主要導覽">
+        <a href="#home">Home</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#services">Services</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero section-grid">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Business Automation &amp; Digital Solutions</p>
+          <h1>讓企業每天重複的工作，<span>自動完成。</span></h1>
+          <p class="hero-lead">FlowForge 協助中小企業與製造業整理現有流程，整合 Excel、ERP、MES 與日常作業系統，減少人工輸入，讓資料更即時、工作更容易追蹤。</p>
+          <div class="button-group">
+            <a class="button button-primary" href="#solutions">了解企業常見問題 <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#contact">討論目前流程</a>
+          </div>
+          <ul class="hero-notes" aria-label="服務特色">
+            <li>先盤點現有作業</li><li>保留可用的既有工具</li><li>分階段導入與驗證</li>
+          </ul>
         </div>
-    </header>
 
-    <!-- 首頁主視覺 -->
-    <section class="hero">
-        <div class="container hero-content">
-            <p class="eyebrow">JavaScript 小作品展示</p>
-
-            <h2>前端練習作品集</h2>
-
-            <p class="hero-text">
-                整理我目前學習 HTML、CSS、JavaScript 過程中完成的小作品，
-                包含 TodoList、API 資料渲染、搜尋、篩選與排序練習。
-            </p>
-
-            <div class="hero-actions">
-                <a class="btn primary" href="#projects">查看作品</a>
+        <div class="flow-visual reveal" aria-label="從分散作業到自動化流程的示意圖">
+          <div class="visual-topline"><span>流程整合概況</span><span class="live"><i></i> 正常</span></div>
+          <div class="flow-stage">
+            <div class="source-stack">
+              <div class="source-card"><span class="source-icon">XL</span><span><b>Excel</b><small>表單與報表</small></span></div>
+              <div class="source-card"><span class="source-icon">ER</span><span><b>ERP / MES</b><small>訂單與生產資料</small></span></div>
+              <div class="source-card"><span class="source-icon">AI</span><span><b>AI 工作流程</b><small>分類與資料整理</small></span></div>
             </div>
-        </div>
-    </section>
-
-    <!-- 關於我 -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">關於我</h2>
-
-            <p class="section-text">
-                我目前正在學習前端開發，主要練習 HTML、CSS、JavaScript，
-                並透過小作品理解 DOM 操作、事件監聽、陣列資料處理、
-                API 串接與畫面渲染流程。作品集目前會以學習作品為主，
-                持續補強基礎能力。
-            </p>
-        </div>
-    </section>
-
-    <!-- 能力 -->
-    <section id="skills" class="section section-light">
-        <div class="container">
-            <h2 class="section-title">能力與工具</h2>
-
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <h3>HTML / CSS</h3>
-                    <p>
-                        練習網頁結構、排版、RWD、卡片版型與基本視覺調整。
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>
-                        練習事件監聽、DOM 操作、陣列方法、資料篩選、排序與畫面更新。
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>API 串接</h3>
-                    <p>
-                        使用 axios / fetch 取得資料，並將資料渲染到畫面上。
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>作品整理</h3>
-                    <p>
-                        整理練習作品、紀錄學習過程，並逐步補充 README 與專案說明。
-                    </p>
-                </div>
+            <div class="flow-line" aria-hidden="true"><span></span></div>
+            <div class="result-card">
+              <span class="result-label">已自動化</span>
+              <div class="result-ring"><strong>同步</strong><small>資料自動更新</small></div>
+              <div class="result-bars"><i></i><i></i><i></i><i></i><i></i></div>
             </div>
+          </div>
+          <div class="visual-footer"><span>同步狀態</span><strong><i></i> 系統運作正常</strong></div>
         </div>
+      </div>
     </section>
 
-    <!-- 專案作品 -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">精選專案</h2>
-
-            <p class="section-text project-intro">
-                這裡先放目前整理好的兩個小作品，主要是練習 JavaScript、
-                API 資料處理和畫面更新。
-            </p>
-
-            <div class="project-grid">
-                <!-- 專案 1 -->
-                <article class="project-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-list-check"></i>
-                    </span>
-
-                    <span class="project-type">練習作品</span>
-
-                    <h3>TodoList 待辦清單</h3>
-
-                    <p>
-                        練習新增、刪除、完成狀態切換、Tab 篩選與清除已完成項目。
-                    </p>
-
-                    <div class="project-detail">
-                        <h4>負責與練習內容</h4>
-                        <ul>
-                            <li>新增待辦事項</li>
-                            <li>checkbox 切換完成狀態</li>
-                            <li>全部 / 已完成 / 未完成篩選</li>
-                            <li>清除已完成項目</li>
-                            <li>剩餘待辦數量計算</li>
-                        </ul>
-                    </div>
-
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>DOM</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a class="btn primary project-btn" href="https://tylerwang.me/TODOLIST/" target="_blank">
-                            查看作品
-                        </a>
-                    </div>
-                </article>
-
-                <!-- 專案 2 -->
-                <article class="project-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-seedling"></i>
-                    </span>
-
-                    <span class="project-type">API 串接</span>
-
-                    <h3>農產品比價查詢</h3>
-
-                    <p>
-                        使用 axios 串接公開 JSON 資料，練習作物名稱搜尋、
-                        分類篩選、價格排序與表格渲染。
-                    </p>
-
-                    <div class="project-detail">
-                        <h4>負責與練習內容</h4>
-                        <ul>
-                            <li>axios 取得資料</li>
-                            <li>作物名稱搜尋</li>
-                            <li>分類按鈕切換</li>
-                            <li>select 排序</li>
-                            <li>表頭點擊排序</li>
-                            <li>currentData 狀態管理</li>
-                        </ul>
-                    </div>
-
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Axios</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a class="btn primary project-btn" href="https://tylerwang.me/Agricultural-Products-Comparison-Website/" target="_blank">
-                            查看作品
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
+    <section class="trust-strip" aria-label="核心能力">
+      <div class="container trust-grid">
+        <div><strong>6 項</strong><span>企業自動化服務</span></div>
+        <div><strong>流程盤點</strong><span>先釐清問題與資料來源</span></div>
+        <div><strong>系統整合</strong><span>串接現有工具與作業</span></div>
+        <div><strong>分階段導入</strong><span>逐步驗證再持續擴充</span></div>
+      </div>
     </section>
 
-    <!-- 專注方向 -->
-    <section id="focus" class="section section-light">
-        <div class="container">
-            <h2 class="section-title">專注方向</h2>
-
-            <p class="section-text project-intro">
-                目前先把基礎練熟，再慢慢整理更多小作品。
-            </p>
-
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>JavaScript 基礎</h3>
-                    <ul>
-                        <li>DOM 操作</li>
-                        <li>事件監聽</li>
-                        <li>陣列方法</li>
-                        <li>資料篩選與排序</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>API 串接與資料處理</h3>
-                    <ul>
-                        <li>axios / fetch 使用</li>
-                        <li>JSON 資料讀取</li>
-                        <li>資料狀態管理</li>
-                        <li>畫面資料渲染</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>前端切版與 RWD</h3>
-                    <ul>
-                        <li>區塊切版</li>
-                        <li>卡片排版</li>
-                        <li>導覽列設計</li>
-                        <li>手機版畫面調整</li>
-                    </ul>
-                </div>
-            </div>
+    <section id="solutions" class="section section-grid">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Solutions</p><h2>處理每天都在發生，卻一直耗費人力的問題。</h2></div>
+          <p>FlowForge 先了解現有作業方式，再針對重複整理、資料分散、人工輸入與報表延遲，規劃合適的改善範圍。</p>
         </div>
+        <div class="bento-grid">
+          <article class="bento-card bento-wide reveal">
+            <div class="card-number">01</div>
+            <div class="card-copy"><span class="card-kicker">重複人工輸入</span><h3>同一筆資料，不必在不同表單反覆輸入</h3><p>串接表單、Excel、ERP 與 MES，讓已確認的資料依流程帶入下一個作業環節，降低漏填、錯填與版本不一致。</p></div>
+            <div class="mini-flow" aria-hidden="true"><span>輸入</span><i></i><span>驗證</span><i></i><span>同步</span><i></i><span>報表</span></div>
+          </article>
+          <article class="bento-card bento-tall reveal">
+            <div class="card-number">02</div><span class="card-kicker">缺乏即時報表</span><h3>主管不必等到月底，才知道目前狀況</h3><p>彙整生產、庫存與服務紀錄，將重要數字、進度和異常集中呈現在 Dashboard。</p>
+            <div class="pulse-chart" aria-hidden="true"><span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:47%"></span><span style="--h:68%"></span><span style="--h:61%"></span><span style="--h:82%"></span><span style="--h:74%"></span><span style="--h:92%"></span></div>
+          </article>
+          <article class="bento-card reveal">
+            <div class="card-number">03</div><span class="card-kicker">Excel 重複整理</span><h3>固定格式的整理與報表，自動產生</h3><p>將資料合併、欄位核對、格式轉換與定期報表改為自動執行。</p>
+          </article>
+          <article class="bento-card reveal">
+            <div class="card-number">04</div><span class="card-kicker">ERP 資料分散</span><h3>把需要的資料帶到實際作業現場</h3><p>整合 ERP、MES 與內部系統，讓各部門使用一致的訂單、生產及庫存資訊。</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- 聯絡我 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">聯絡我</h2>
-
-            <p class="section-text contact-text">
-                目前持續整理前端練習作品，歡迎透過 Instagram 或 Email 與我聯繫。
-            </p>
-
-            <div class="contact-actions">
-                <a class="btn primary" href="https://www.instagram.com/1ul_1025" target="_blank">
-                    Instagram
-                </a>
-                <a class="btn secondary" href="mailto:your-email@example.com">
-                    寄信給我
-                </a>
-            </div>
+    <section id="services" class="section section-muted">
+      <div class="container">
+        <div class="section-heading compact reveal">
+          <div><p class="eyebrow">Services</p><h2>依照現有流程，選擇需要的改善方式。</h2></div>
+          <p>可以先處理一份耗時的報表，也可以逐步整合跨部門作業，不必一次更換所有系統。</p>
         </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-index">01</span><div class="line-icon sheet" aria-hidden="true"></div><h3>Excel 自動化</h3><p>自動合併檔案、整理欄位、核對資料並產生固定格式報表，減少每天重做相同步驟。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+          <article class="service-card reveal"><span class="service-index">02</span><div class="line-icon nodes" aria-hidden="true"></div><h3>ERP／MES 系統整合</h3><p>串接訂單、生產、報工與庫存資料，讓部門之間不再靠人工轉貼或重複登打。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+          <article class="service-card reveal"><span class="service-index">03</span><div class="line-icon spark" aria-hidden="true"></div><h3>AI 工作流程</h3><p>將文件分類、內容摘要、資料比對與回覆草稿加入既有流程，並保留必要的人工確認。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+          <article class="service-card reveal"><span class="service-index">04</span><div class="line-icon window" aria-hidden="true"></div><h3>客製化企業系統</h3><p>依照實際角色、權限與表單需求，建立報工、庫存、客訴或其他內部作業系統。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+          <article class="service-card reveal"><span class="service-index">05</span><div class="line-icon chart" aria-hidden="true"></div><h3>Dashboard 與資料分析</h3><p>集中呈現營運數字、工作進度與異常項目，讓主管能使用一致資料掌握現況。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+          <article class="service-card reveal"><span class="service-index">06</span><div class="line-icon loop" aria-hidden="true"></div><h3>RPA 自動化</h3><p>代替人員執行固定的系統操作、資料下載、檔案搬移與通知，並留下執行紀錄。</p><a href="#contact">說明目前作業 <span>→</span></a></article>
+        </div>
+      </div>
     </section>
 
-    <!-- 頁尾 -->
-    <footer class="footer">
-        <p>© 2026 Tyler Wang. 個人作品集網站</p>
-    </footer>
+    <section id="cases" class="section section-grid">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Case Studies</p><h2>企業作業情境 Demo</h2></div>
+          <p>以下內容皆為功能展示，不代表任何特定公司，也不包含客戶名稱、真實營運數據或企業機密。</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card case-featured reveal"><div class="case-preview production" aria-hidden="true"><div class="preview-bar"><i></i><i></i><i></i></div><div class="preview-body"><span></span><span></span><span></span><span></span></div></div><div class="case-content"><div class="tag-row"><span>製造管理</span><span>現場報工</span></div><h3>板金報工管理系統 Demo</h3><p>示範現場人員依工單與站點回報數量、工時及異常，主管可集中查看生產進度。</p><a href="#contact" aria-label="了解板金報工管理系統 Demo">了解 Demo 範圍 <span>↗</span></a></div></article>
+          <article class="case-card reveal"><div class="case-preview inventory" aria-hidden="true"><div class="box-stack"><i></i><i></i><i></i></div></div><div class="case-content"><div class="tag-row"><span>庫存管理</span><span>報表</span></div><h3>庫存管理系統 Demo</h3><p>示範進出庫、盤點、安全庫存提醒與庫存報表的集中管理方式。</p><a href="#contact">了解 Demo 範圍 <span>↗</span></a></div></article>
+          <article class="case-card reveal"><div class="case-preview service" aria-hidden="true"><div class="ticket-list"><i></i><i></i><i></i></div></div><div class="case-content"><div class="tag-row"><span>客戶服務</span><span>案件追蹤</span></div><h3>客訴管理系統 Demo</h3><p>示範客訴受理、負責人指派、處理紀錄、期限提醒與結案追蹤。</p><a href="#contact">了解 Demo 範圍 <span>↗</span></a></div></article>
+          <article class="case-card reveal"><div class="case-preview plant" aria-hidden="true"><div class="leaf"></div><div class="sensor-ring"></div></div><div class="case-content"><div class="tag-row"><span>設備資料</span><span>自動控制</span></div><h3>智慧植物照護系統 Demo</h3><p>示範環境感測資料、歷史趨勢、條件提醒與自動澆水控制。</p><a href="#contact">了解 Demo 範圍 <span>↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+        <div class="about-copy reveal"><p class="eyebrow">About FlowForge</p><h2>先把實際作業說清楚，再決定系統怎麼做。</h2><p>FlowForge 專注於企業流程自動化與客製化系統服務，協助中小企業、製造業與傳統產業改善依賴 Excel、人工輸入及跨部門傳遞的日常作業。</p><p>我們從使用者、資料來源、權限與例外情況開始盤點，確認範圍後分階段建置與驗證。FlowForge 由 Tyler Wang 創立，專注於貼近現場、容易維護的企業數位化方案。</p></div>
+        <ol class="process-list reveal">
+          <li><span>01</span><div><h3>盤點目前作業</h3><p>確認參與人員、使用工具、資料來源與主要問題。</p></div></li>
+          <li><span>02</span><div><h3>確認改善範圍</h3><p>定義需要整合的步驟、權限、例外處理與驗收方式。</p></div></li>
+          <li><span>03</span><div><h3>建立可操作版本</h3><p>讓實際使用者測試流程，再依回饋調整細節。</p></div></li>
+          <li><span>04</span><div><h3>上線與後續調整</h3><p>確認日常運作情況，依實際需求逐步增加功能。</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section-grid">
+      <div class="container contact-card reveal">
+        <div><p class="eyebrow">Contact FlowForge</p><h2>先從一項耗時的日常作業談起。</h2><p>請說明目前使用的工具、作業方式與希望改善的問題。FlowForge 會先協助釐清需求，再確認是否適合以自動化、系統整合或客製化系統處理。</p></div>
+        <a class="button button-light" href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">透過 LINE 諮詢 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>FlowForge</span></a><p>Business Automation &amp; Digital Solutions<br>企業流程自動化與客製化系統服務</p></div>
+      <div class="footer-links"><a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#cases">Case Studies</a><a href="#about">About</a></div>
+      <div class="footer-meta"><a href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://www.instagram.com/1ul_1025/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://github.com/s96405" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Copyright © <span data-year></span> FlowForge. All rights reserved.</span><a href="#home">回到頁首 ↑</a></div>
+  </footer>
 </body>
-
 </html>

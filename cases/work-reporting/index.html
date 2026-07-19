@@ -39,8 +39,11 @@
         <div class="case-hero-copy reveal">
           <a class="case-back" href="/#cases">← 返回系統案例</a>
           <p class="eyebrow">Case Study · Production Reporting</p>
-          <h1>讓工廠報工更即時、更準確，也更容易追蹤</h1>
-          <p class="case-hero-lead">將紙本與人工統計轉為數位報工流程，自動限制製程可報數量，讓管理者即時掌握工單與生產進度。</p>
+          <h1>
+            <span class="case-title-desktop">讓工廠報工更即時、更準確，也更容易追蹤</span>
+            <span class="case-title-mobile"><span>數位報工</span><span>即時掌握生產進度</span></span>
+          </h1>
+          <p class="case-hero-lead"><span class="case-lead-desktop">將紙本與人工統計轉為數位報工流程，自動限制製程可報數量，讓管理者即時掌握工單與生產進度。</span><span class="case-lead-mobile">現場直接完成報工，系統同步更新工單與製程進度。</span></p>
           <ul class="case-tags" aria-label="案例內容">
             <li>工單報工</li><li>製程紀錄</li><li>良品／不良品</li><li>進度追蹤</li>
           </ul>
@@ -110,7 +113,7 @@
           <p>作業人員只需選擇工單與製程，輸入良品及不良品數量，系統便會自動檢查目前可報數量，避免後製程超量報工。送出後，製程進度與整體完成數量會立即更新。</p>
         </div>
 
-        <article class="screen-showcase reveal">
+        <article class="screen-showcase report-entry-showcase reveal">
           <div class="screen-copy"><span>01 · 報工操作</span><h3>自動限制超量報工</h3><p>系統依工單預計數量與前一道製程完成量，顯示目前製程可報上限，避免後製程輸入超過可流入的數量。</p></div>
           <div class="system-screen report-form" aria-label="報工操作示意畫面">
             <div class="mock-window-head"><span>新增報工紀錄</span><i>示範畫面</i></div>
@@ -127,28 +130,41 @@
           </div>
         </article>
 
-        <article class="screen-showcase screen-reverse reveal">
-          <div class="screen-copy"><span>02 · 報工紀錄</span><h3>集中保存報工紀錄</h3><p>每次送出都留下工單、製程、數量、時間與人員資料，查詢時不必再翻紙本或逐一詢問。</p></div>
+        <article class="screen-showcase screen-reverse record-showcase reveal">
+          <div class="screen-copy"><span><span class="screen-index-desktop">02 · 報工紀錄</span><span class="screen-index-mobile">03 · 報工紀錄</span></span><h3>集中保存報工紀錄</h3><p>每次送出都留下工單、製程、數量、時間與人員資料，查詢時不必再翻紙本或逐一詢問。</p></div>
           <div class="system-screen record-screen" aria-label="報工紀錄示意畫面">
             <div class="mock-window-head"><span>報工紀錄</span><i>共 3 筆示範資料</i></div>
             <div class="record-table">
               <div class="record-row record-head"><span>報工時間</span><span>工單</span><span>製程</span><span>良品</span><span>不良</span><span>操作人員</span></div>
-              <div class="record-row"><span>2026-07-18 14:20</span><span>WO-2026-0018</span><span>第一道製程</span><span>80</span><span>2</span><span>操作人員 01</span></div>
-              <div class="record-row"><span>2026-07-18 10:35</span><span>WO-2026-0018</span><span>第一道製程</span><span>120</span><span>3</span><span>操作人員 01</span></div>
-              <div class="record-row"><span>2026-07-17 16:10</span><span>WO-2026-0018</span><span>第一道製程</span><span>120</span><span>3</span><span>操作人員 01</span></div>
+              <div class="record-row"><span data-label="報工時間">2026-07-18 14:20</span><span data-label="工單">WO-2026-0018</span><span data-label="製程">第一道製程</span><span data-label="良品">80</span><span data-label="不良">2</span><span data-label="操作人員">操作人員 01</span></div>
+              <div class="record-row"><span data-label="報工時間">2026-07-18 10:35</span><span data-label="工單">WO-2026-0018</span><span data-label="製程">第一道製程</span><span data-label="良品">120</span><span data-label="不良">3</span><span data-label="操作人員">操作人員 01</span></div>
+              <div class="record-row"><span data-label="報工時間">2026-07-17 16:10</span><span data-label="工單">WO-2026-0018</span><span data-label="製程">第一道製程</span><span data-label="良品">120</span><span data-label="不良">3</span><span data-label="操作人員">操作人員 01</span></div>
             </div>
           </div>
         </article>
 
-        <article class="screen-showcase reveal">
-          <div class="screen-copy"><span>03 · 生產進度</span><h3>即時更新工單進度</h3><p>送出報工後，預計數量、累計良品、累計不良與完成進度立即更新，管理者不必等待人工彙整。</p></div>
+        <article class="screen-showcase order-progress-showcase reveal">
+          <div class="screen-copy"><span><span class="screen-index-desktop">03 · 生產進度</span><span class="screen-index-mobile">02 · 工單與製程</span></span><h3>即時更新工單進度</h3><p>送出報工後，預計數量、累計良品、累計不良與完成進度立即更新，管理者不必等待人工彙整。</p></div>
           <div class="system-screen progress-screen" aria-label="生產進度示意畫面">
             <div class="mock-window-head"><span>工單進度</span><i>資料已更新</i></div>
             <div class="progress-screen-top"><div><small>WO-2026-0018</small><strong>展示產品 A</strong><span>第一道製程</span></div><div class="progress-value"><strong>64%</strong><span>目前進度</span></div></div>
             <div class="progress-track"><i></i></div>
-            <div class="progress-metrics"><div><small>預計數量</small><strong>500</strong></div><div><small>累計良品</small><strong>320</strong></div><div><small>累計不良</small><strong>8</strong></div></div>
+            <div class="progress-metrics"><div><small><span class="case-metric-desktop">預計數量</span><span class="case-metric-mobile">目前可報</span></small><strong><span class="case-metric-desktop">500</span><span class="case-metric-mobile">180</span></strong></div><div><small>累計良品</small><strong>320</strong></div><div><small>累計不良</small><strong>8</strong></div></div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="case-outcome" aria-labelledby="outcome-title">
+      <div class="container">
+        <p class="eyebrow">Business Outcome</p>
+        <h2 id="outcome-title">報工完成後，資訊不再等人整理</h2>
+        <ul>
+          <li>報工資料集中保存</li>
+          <li>良品與不良品使用一致的數量規則</li>
+          <li>工單與製程狀態更容易追蹤</li>
+          <li>主管不必等待人工彙整進度</li>
+        </ul>
       </div>
     </section>
 

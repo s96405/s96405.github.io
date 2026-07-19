@@ -3,7 +3,7 @@
 .demo-intro-inner { position: relative; z-index: 1; }
 .demo-back { display: inline-flex; margin-bottom: 2.5rem; color: var(--color-muted); font-size: .76rem; font-weight: 700; }
 .demo-back:hover { color: var(--color-accent-strong); }
-.demo-intro h1 { margin-bottom: 1rem; font-size: clamp(2.5rem, 4.5vw, 4.25rem); letter-spacing: -.045em; }
+.demo-intro h1 { max-width: 720px; margin-bottom: 1rem; font-size: clamp(2.5rem, 4.5vw, 4.25rem); letter-spacing: -.045em; }
 .demo-intro-inner > p:last-child { max-width: 720px; margin-bottom: 0; font-size: clamp(1rem, 1.45vw, 1.2rem); }
 
 .test-warning { border-block: 1px solid rgba(245, 158, 11, .3); background: rgba(245, 158, 11, .065); }

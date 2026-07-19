@@ -6,14 +6,6 @@
   <meta name="description" content="FlowForge 報工系統案例：說明工單報工、製程紀錄、良品與不良品回報，以及生產進度追蹤。">
   <meta name="theme-color" content="#07111f">
   <title>報工系統案例｜FlowForge</title>
-  <script>
-    try {
-      const savedTheme = localStorage.getItem('flowforge-theme');
-      document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
-    } catch (error) {
-      document.documentElement.dataset.theme = 'dark';
-    }
-  </script>
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="case.css">
   <script src="../../script.js" defer></script>
@@ -27,16 +19,6 @@
         <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
         <span>FlowForge</span>
       </a>
-      <button
-        class="theme-toggle"
-        type="button"
-        data-theme-toggle
-        aria-label="切換亮色模式"
-        aria-pressed="false"
-      >
-        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
-        <span class="theme-toggle-text">亮色</span>
-      </button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟導覽選單">
         <span></span><span></span>
       </button>
@@ -233,35 +215,5 @@
     </div>
     <div class="container footer-bottom"><span>Copyright © <span data-year></span> FlowForge. All rights reserved.</span><a href="#main-content">回到頁首 ↑</a></div>
   </footer>
-  <script>
-    (() => {
-      const themeToggle = document.querySelector('[data-theme-toggle]');
-      if (!themeToggle) return;
-
-      const themeIcon = themeToggle.querySelector('.theme-toggle-icon');
-      const themeText = themeToggle.querySelector('.theme-toggle-text');
-
-      const updateThemeToggle = (theme) => {
-        const isLight = theme === 'light';
-        document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
-        themeIcon.textContent = isLight ? '☾' : '☀';
-        themeText.textContent = isLight ? '暗色' : '亮色';
-        themeToggle.setAttribute('aria-label', isLight ? '切換暗色模式' : '切換亮色模式');
-        themeToggle.setAttribute('aria-pressed', String(isLight));
-      };
-
-      updateThemeToggle(document.documentElement.dataset.theme);
-
-      themeToggle.addEventListener('click', () => {
-        const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-        updateThemeToggle(nextTheme);
-        try {
-          localStorage.setItem('flowforge-theme', nextTheme);
-        } catch (error) {
-          // 主題仍可在目前頁面切換；瀏覽器封鎖儲存時不影響其他功能。
-        }
-      });
-    })();
-  </script>
 </body>
 </html>

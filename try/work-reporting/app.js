@@ -178,6 +178,8 @@ const workOrderSelect = document.querySelector('#work-order');
 const productNameInput = document.querySelector('#product-name');
 const processSelect = document.querySelector('#process');
 const goodQtyInput = document.querySelector('#good-qty');
+const goodQtyLimit = document.querySelector('#good-qty-limit');
+const goodQtyReason = document.querySelector('#good-qty-reason');
 const defectQtyInput = document.querySelector('#defect-qty');
 const remarkInput = document.querySelector('#remark');
 const remarkCount = document.querySelector('#remark-count');
@@ -212,14 +214,14 @@ function formatDate(isoDate) {
 
 function showActionMessage(message, type = 'success') {
   actionMessage.textContent = message;
-  actionMessage.className = `container action-message is-${type}`;
+  actionMessage.className = `action-message is-${type}`;
   actionMessage.hidden = false;
 }
 
 function clearActionMessage() {
   actionMessage.hidden = true;
   actionMessage.textContent = '';
-  actionMessage.className = 'container action-message';
+  actionMessage.className = 'action-message';
 }
 
 function populateWorkOrders() {
@@ -352,10 +354,10 @@ function renderProcessProgress(orderId) {
 function updateProcessRemainingHint() {
   const order = getOrder(workOrderSelect.value);
   const process = getProcess(processSelect.value);
-  const hint = document.querySelector('#good-qty-help');
   const summaryValue = document.querySelector('#summary-process-remaining');
   if (!order || !process || !order.processIds.includes(process.id)) {
-    hint.textContent = '選擇工單與製程後顯示可報數量。';
+    goodQtyLimit.textContent = '—';
+    goodQtyReason.textContent = '選擇工單與製程後顯示可報數量。';
     summaryValue.textContent = '—';
     return;
   }
@@ -363,18 +365,19 @@ function updateProcessRemainingHint() {
   const processProgress = progress.processes.find((item) => item.id === process.id);
   const processIndex = order.processIds.indexOf(process.id);
   const reportableQty = getProcessReportableQty(order.id, process.id);
+  goodQtyLimit.textContent = String(reportableQty);
   if (processIndex === 0) {
-    hint.textContent = `此製程目前最多可報 ${reportableQty}`;
+    goodQtyReason.textContent = '第一道製程，可報數量依工單預計數量計算。';
   } else {
     const previousProcess = progress.processes.find((item) => item.id === order.processIds[processIndex - 1]);
     const previousGoodQty = previousProcess ? previousProcess.goodQty : 0;
     const currentGoodQty = processProgress ? processProgress.goodQty : 0;
     if (previousGoodQty === 0) {
-      hint.textContent = '前一道製程尚未完成可供本製程報工的數量。';
+      goodQtyReason.textContent = '前一道製程尚未完成可供本製程報工的數量。';
     } else if (reportableQty === 0 && currentGoodQty >= previousGoodQty) {
-      hint.textContent = '目前製程已完成前一道製程可供報工的全部數量。';
+      goodQtyReason.textContent = '目前製程已完成前一道製程可供報工的全部數量。';
     } else {
-      hint.textContent = `前一道製程已完成 ${previousGoodQty}，目前製程已完成 ${currentGoodQty}，本次最多可報 ${reportableQty}。`;
+      goodQtyReason.textContent = `前站已完成 ${previousGoodQty}，目前製程已完成 ${currentGoodQty}。`;
     }
   }
   summaryValue.textContent = String(reportableQty);
@@ -583,7 +586,9 @@ reportForm.addEventListener('submit', (event) => {
     `報工成功\n工單：${result.order.id}\n製程：${result.process.id}｜${result.process.name}\n良品：+${result.goodQty}\n不良品：${result.defectQty}\n\n此筆紀錄已保存在目前瀏覽器。`,
     'success'
   );
-  actionMessage.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  if (!window.matchMedia('(max-width: 980px)').matches) {
+    actionMessage.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  }
 });
 
 openResetButton.addEventListener('click', () => {

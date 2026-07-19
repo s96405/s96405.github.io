@@ -29,7 +29,7 @@
         <a href="/#services">Services</a>
         <a href="/#cases">Case Studies</a>
         <a href="/#about">About</a>
-        <a class="nav-cta" href="#report-form">開始體驗</a>
+        <a class="nav-cta" href="#report-panel">開始體驗</a>
       </nav>
     </div>
   </header>
@@ -58,7 +58,7 @@
     <nav class="system-nav" aria-label="體驗版功能導覽">
       <div class="container system-nav-inner">
         <a href="#overview">總覽</a>
-        <a href="#report-form">新增報工</a>
+        <a href="#report-panel">新增報工</a>
         <a href="#records">報工紀錄</a>
       </div>
     </nav>
@@ -106,7 +106,7 @@
           <p class="summary-note" id="summary-progress-note">整體進度依最後一道必要製程的累計良品計算。</p>
         </section>
 
-        <section class="app-panel report-form-panel" aria-labelledby="form-title">
+        <section class="app-panel report-form-panel" id="report-panel" aria-labelledby="form-title">
           <div class="panel-heading">
             <div><p class="panel-kicker">New Report</p><h2 id="form-title">新增報工</h2></div>
           </div>
@@ -137,7 +137,11 @@
               <div class="field-group">
                 <label for="good-qty">良品數量</label>
                 <input id="good-qty" name="goodQty" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required aria-describedby="good-qty-help good-qty-error">
-                <p class="field-help" id="good-qty-help">選擇工單與製程後顯示可報數量。</p>
+                <div class="reportable-info" id="good-qty-help">
+                  <span>目前最多可報</span>
+                  <strong id="good-qty-limit">—</strong>
+                  <small id="good-qty-reason">選擇工單與製程後顯示可報數量。</small>
+                </div>
                 <p class="field-error" id="good-qty-error"></p>
               </div>
               <div class="field-group">
@@ -156,11 +160,10 @@
 
             <button class="app-primary-button" type="submit">確認報工</button>
           </form>
+          <div class="action-message" id="action-message" role="status" aria-live="polite" hidden></div>
         </section>
       </div>
     </section>
-
-    <div class="container action-message" id="action-message" role="status" aria-live="polite" hidden></div>
 
     <section class="demo-section records-section" id="records" aria-labelledby="records-title">
       <div class="container">

@@ -6,6 +6,14 @@
   <meta name="description" content="FlowForge 報工系統案例：說明工單報工、製程紀錄、良品與不良品回報，以及生產進度追蹤。">
   <meta name="theme-color" content="#07111f">
   <title>報工系統案例｜FlowForge</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('flowforge-theme');
+      document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
+    } catch (error) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="case.css">
   <script src="../../script.js" defer></script>
@@ -19,6 +27,16 @@
         <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
         <span>FlowForge</span>
       </a>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="切換亮色模式"
+        aria-pressed="false"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+        <span class="theme-toggle-text">亮色</span>
+      </button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟導覽選單">
         <span></span><span></span>
       </button>
@@ -39,13 +57,13 @@
         <div class="case-hero-copy reveal">
           <a class="case-back" href="/#cases">← 返回系統案例</a>
           <p class="eyebrow">Case Study · Production Reporting</p>
-          <h1>報工系統</h1>
-          <p class="case-hero-lead">現場人員選擇工單與製程後，輸入完成數量與不良數量。系統留下每次報工紀錄，方便後續查詢與生產進度追蹤。</p>
+          <h1>讓工廠報工更即時、更準確，也更容易追蹤</h1>
+          <p class="case-hero-lead">將紙本與人工統計轉為數位報工流程，自動限制製程可報數量，讓管理者即時掌握工單與生產進度。</p>
           <ul class="case-tags" aria-label="案例內容">
             <li>工單報工</li><li>製程紀錄</li><li>良品／不良品</li><li>進度追蹤</li>
           </ul>
           <div class="case-hero-actions">
-            <a class="button button-primary" href="/try/work-reporting/">開啟報工系統體驗版 <span aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="/try/work-reporting/">立即體驗報工流程 <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
@@ -64,8 +82,8 @@
 
     <aside class="demo-notice" aria-label="示範環境聲明">
       <div class="container demo-notice-inner">
-        <strong>示範環境，內容與資料均為虛構。</strong>
-        <span>本頁不包含客戶名稱、真實工單、品號、員工資料或營運數據。</span>
+        <strong>此頁為互動體驗版本，使用模擬工單資料展示核心報工流程。</strong>
+        <span>正式系統可依企業需求串接 ERP、MES、條碼掃描、員工權限、機台資料與報表功能。</span>
       </div>
     </aside>
 
@@ -73,14 +91,14 @@
       <div class="container">
         <div class="case-section-heading reveal">
           <p class="eyebrow">Before</p>
-          <h2>報工完成了，資料卻還在紙本和 Excel 裡</h2>
-          <p>現場做完工作，不代表辦公室立刻有資料。只要中間還需要抄寫、轉傳或重新輸入，進度就會慢半拍。</p>
+          <h2>現場報工常遇到這些問題</h2>
+          <p>紙本、Excel 與口頭回報同時存在時，數量、進度和異常往往要等到人工整理後才看得出來。</p>
         </div>
         <div class="problem-grid">
-          <article class="problem-card reveal"><span>01</span><h3>同一筆資料輸入兩次</h3><p>現場先寫紙本或傳訊息，再由辦公室把數量重新輸入系統。</p></article>
-          <article class="problem-card reveal"><span>02</span><h3>各站紀錄分散</h3><p>同一張工單經過不同製程，各站資料放在不同檔案，查詢時還要逐一確認。</p></article>
-          <article class="problem-card reveal"><span>03</span><h3>數量格式不一致</h3><p>良品與不良品沒有固定填法，月底彙整時才發現資料對不起來。</p></article>
-          <article class="problem-card reveal"><span>04</span><h3>進度必須等人整理</h3><p>主管想知道工單做到哪裡，往往要先問現場，再等人更新報表。</p></article>
+          <article class="problem-card reveal"><span>01</span><h3>紙本紀錄難以追查</h3><p>手寫報工容易漏寫或寫錯，事後要確認時間、數量與作業人員時不容易查找。</p></article>
+          <article class="problem-card reveal"><span>02</span><h3>後製程發生超量</h3><p>後製程數量超過前製程完成量，常要等到彙整資料時才發現異常。</p></article>
+          <article class="problem-card reveal"><span>03</span><h3>數量需要人工核對</h3><p>良品、不良品與剩餘數量由人工整理，加上每個人的填寫方式不同，核對時間自然增加。</p></article>
+          <article class="problem-card reveal"><span>04</span><h3>工單進度無法即時掌握</h3><p>管理者想知道各製程做到哪裡，還得先詢問現場並等待人員更新報表。</p></article>
         </div>
       </div>
     </section>
@@ -89,15 +107,15 @@
       <div class="container">
         <div class="case-section-heading reveal">
           <p class="eyebrow">Reporting Flow</p>
-          <h2>一次報工，留下完整紀錄</h2>
-          <p>使用者只填寫這次作業的結果，工單與製程資料沿用系統內已有內容。</p>
+          <h2>花 1 分鐘體驗一次完整報工流程</h2>
+          <p>從選擇工單、確認可報數量到送出紀錄，可以直接看到系統如何檢查數量並更新進度。</p>
         </div>
         <ol class="case-step-list">
-          <li class="reveal"><span>01</span><div><h3>選擇生產工單</h3><p>查看工單、產品與預計數量。</p></div></li>
-          <li class="reveal"><span>02</span><div><h3>選擇作業製程</h3><p>確認本次作業所在製程。</p></div></li>
-          <li class="reveal"><span>03</span><div><h3>填寫作業結果</h3><p>輸入良品、不良品與備註。</p></div></li>
-          <li class="reveal"><span>04</span><div><h3>確認後送出</h3><p>再次核對工單、製程與數量。</p></div></li>
-          <li class="reveal"><span>05</span><div><h3>更新紀錄與進度</h3><p>保存本次紀錄並更新累計數量。</p></div></li>
+          <li class="reveal"><span>01</span><div><h3>選擇一張生產工單</h3><p>查看工單、產品與預計生產數量。</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>選擇目前報工製程</h3><p>確認這次作業所屬的製程站別。</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>查看最大報工數量</h3><p>系統依前後製程進度顯示目前可報上限。</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>輸入良品與不良品</h3><p>填寫本次完成數量及不良品數量。</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>送出並查看進度更新</h3><p>保存紀錄後立即查看製程與工單進度。</p></div></li>
         </ol>
       </div>
     </section>
@@ -106,12 +124,12 @@
       <div class="container">
         <div class="case-section-heading reveal">
           <p class="eyebrow">System Views</p>
-          <h2>三個畫面，從輸入到查詢</h2>
-          <p>以下介面以純 HTML 與 CSS 製作，僅用來說明資料如何輸入與呈現。</p>
+          <h2>系統如何改善報工流程</h2>
+          <p>作業人員只需選擇工單與製程，輸入良品及不良品數量，系統便會自動檢查目前可報數量，避免後製程超量報工。送出後，製程進度與整體完成數量會立即更新。</p>
         </div>
 
         <article class="screen-showcase reveal">
-          <div class="screen-copy"><span>01 · 報工操作</span><h3>只填寫這次完成的工作</h3><p>工單、產品與製程先帶入畫面。操作人員輸入良品、不良品和備註，確認後送出。</p></div>
+          <div class="screen-copy"><span>01 · 報工操作</span><h3>自動限制超量報工</h3><p>系統依工單預計數量與前一道製程完成量，顯示目前製程可報上限，避免後製程輸入超過可流入的數量。</p></div>
           <div class="system-screen report-form" aria-label="報工操作示意畫面">
             <div class="mock-window-head"><span>新增報工紀錄</span><i>示範畫面</i></div>
             <div class="form-grid">
@@ -128,7 +146,7 @@
         </article>
 
         <article class="screen-showcase screen-reverse reveal">
-          <div class="screen-copy"><span>02 · 報工紀錄</span><h3>每次送出都有時間與人員紀錄</h3><p>查詢時可以依工單或製程找到過去紀錄，不必再翻紙本或逐一詢問。</p></div>
+          <div class="screen-copy"><span>02 · 報工紀錄</span><h3>集中保存報工紀錄</h3><p>每次送出都留下工單、製程、數量、時間與人員資料，查詢時不必再翻紙本或逐一詢問。</p></div>
           <div class="system-screen record-screen" aria-label="報工紀錄示意畫面">
             <div class="mock-window-head"><span>報工紀錄</span><i>共 3 筆示範資料</i></div>
             <div class="record-table">
@@ -141,7 +159,7 @@
         </article>
 
         <article class="screen-showcase reveal">
-          <div class="screen-copy"><span>03 · 生產進度</span><h3>不用等報表，直接查看累計數量</h3><p>預計數量、累計良品與累計不良放在同一個畫面，並以報工紀錄計算目前進度。</p></div>
+          <div class="screen-copy"><span>03 · 生產進度</span><h3>即時更新工單進度</h3><p>送出報工後，預計數量、累計良品、累計不良與完成進度立即更新，管理者不必等待人工彙整。</p></div>
           <div class="system-screen progress-screen" aria-label="生產進度示意畫面">
             <div class="mock-window-head"><span>工單進度</span><i>資料已更新</i></div>
             <div class="progress-screen-top"><div><small>WO-2026-0018</small><strong>展示產品 A</strong><span>第一道製程</span></div><div class="progress-value"><strong>64%</strong><span>目前進度</span></div></div>
@@ -189,11 +207,11 @@
         </article>
         <article class="fit-card fit-card-limit reveal">
           <p class="eyebrow">Limitations</p>
-          <h2>需要先確認的事</h2>
+          <h2>正式版可依需求擴充</h2>
           <ul>
-            <li>實際欄位與操作方式需依企業現況調整</li>
-            <li>ERP／MES 串接方式取決於現有系統能力</li>
-            <li>本頁是靜態示範，不是正式連線環境</li>
+            <li>依現有 ERP／MES 能力交換工單與報工資料</li>
+            <li>加入條碼掃描、員工權限與機台資料</li>
+            <li>依企業現況調整欄位，並製作查詢、統計與報表功能</li>
           </ul>
         </article>
       </div>
@@ -201,8 +219,8 @@
 
     <section id="contact" class="contact-section section-grid">
       <div class="container contact-card reveal">
-        <div><p class="eyebrow">Contact FlowForge</p><h2>想把現場報工改得更簡單？</h2><p>可以先說明目前用紙本、Excel 還是既有系統，以及最常重複輸入的資料。FlowForge 會一起看看哪些步驟值得先處理。</p></div>
-        <a class="button button-light" href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">透過 LINE 諮詢 <span aria-hidden="true">→</span></a>
+        <div><p class="eyebrow">Contact FlowForge</p><h2>您的工廠也有類似的報工問題嗎？</h2><p>每間工廠的製程、表單與管理方式都不同。系統可依現有工作流程進行規劃，不需要完全改變現場習慣。</p></div>
+        <a class="button button-light" href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">討論您的需求 <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
@@ -215,5 +233,35 @@
     </div>
     <div class="container footer-bottom"><span>Copyright © <span data-year></span> FlowForge. All rights reserved.</span><a href="#main-content">回到頁首 ↑</a></div>
   </footer>
+  <script>
+    (() => {
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      if (!themeToggle) return;
+
+      const themeIcon = themeToggle.querySelector('.theme-toggle-icon');
+      const themeText = themeToggle.querySelector('.theme-toggle-text');
+
+      const updateThemeToggle = (theme) => {
+        const isLight = theme === 'light';
+        document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+        themeIcon.textContent = isLight ? '☾' : '☀';
+        themeText.textContent = isLight ? '暗色' : '亮色';
+        themeToggle.setAttribute('aria-label', isLight ? '切換暗色模式' : '切換亮色模式');
+        themeToggle.setAttribute('aria-pressed', String(isLight));
+      };
+
+      updateThemeToggle(document.documentElement.dataset.theme);
+
+      themeToggle.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        updateThemeToggle(nextTheme);
+        try {
+          localStorage.setItem('flowforge-theme', nextTheme);
+        } catch (error) {
+          // 主題仍可在目前頁面切換；瀏覽器封鎖儲存時不影響其他功能。
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

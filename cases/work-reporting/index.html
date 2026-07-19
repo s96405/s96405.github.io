@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FlowForge 報工系統案例：說明工單報工、製程紀錄、良品與不良品回報，以及生產進度追蹤。">
+  <meta name="theme-color" content="#07111f">
+  <title>報工系統案例｜FlowForge</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="case.css">
+  <script src="../../script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="/#home" aria-label="FlowForge 首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>FlowForge</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟導覽選單">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="主要導覽">
+        <a href="/#home">Home</a>
+        <a href="/#solutions">Solutions</a>
+        <a href="/#services">Services</a>
+        <a href="/#cases">Case Studies</a>
+        <a href="/#about">About</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="case-hero section-grid">
+      <div class="container case-hero-layout">
+        <div class="case-hero-copy reveal">
+          <a class="case-back" href="/#cases">← 返回系統案例</a>
+          <p class="eyebrow">Case Study · Production Reporting</p>
+          <h1>報工系統</h1>
+          <p class="case-hero-lead">現場人員選擇工單與製程後，輸入完成數量與不良數量。系統留下每次報工紀錄，方便後續查詢與生產進度追蹤。</p>
+          <ul class="case-tags" aria-label="案例內容">
+            <li>工單報工</li><li>製程紀錄</li><li>良品／不良品</li><li>進度追蹤</li>
+          </ul>
+        </div>
+
+        <div class="case-hero-preview reveal" aria-label="報工系統進度示意畫面">
+          <div class="mock-window-head"><span>生產進度</span><i>示範畫面</i></div>
+          <div class="hero-progress-summary">
+            <div><small>生產工單</small><strong>WO-2026-0018</strong></div>
+            <span class="mock-status">進行中</span>
+          </div>
+          <div class="hero-product"><small>產品名稱</small><strong>展示產品 A</strong><span>第一道製程</span></div>
+          <div class="progress-ring" aria-label="目前進度 64%"><strong>64%</strong><small>目前進度</small></div>
+          <div class="hero-metrics"><div><span>500</span><small>預計數量</small></div><div><span>320</span><small>累計良品</small></div><div><span>8</span><small>累計不良</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="demo-notice" aria-label="示範環境聲明">
+      <div class="container demo-notice-inner">
+        <strong>示範環境，內容與資料均為虛構。</strong>
+        <span>本頁不包含客戶名稱、真實工單、品號、員工資料或營運數據。</span>
+      </div>
+    </aside>
+
+    <section class="section case-problems">
+      <div class="container">
+        <div class="case-section-heading reveal">
+          <p class="eyebrow">Before</p>
+          <h2>報工完成了，資料卻還在紙本和 Excel 裡</h2>
+          <p>現場做完工作，不代表辦公室立刻有資料。只要中間還需要抄寫、轉傳或重新輸入，進度就會慢半拍。</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card reveal"><span>01</span><h3>同一筆資料輸入兩次</h3><p>現場先寫紙本或傳訊息，再由辦公室把數量重新輸入系統。</p></article>
+          <article class="problem-card reveal"><span>02</span><h3>各站紀錄分散</h3><p>同一張工單經過不同製程，各站資料放在不同檔案，查詢時還要逐一確認。</p></article>
+          <article class="problem-card reveal"><span>03</span><h3>數量格式不一致</h3><p>良品與不良品沒有固定填法，月底彙整時才發現資料對不起來。</p></article>
+          <article class="problem-card reveal"><span>04</span><h3>進度必須等人整理</h3><p>主管想知道工單做到哪裡，往往要先問現場，再等人更新報表。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted case-process">
+      <div class="container">
+        <div class="case-section-heading reveal">
+          <p class="eyebrow">Reporting Flow</p>
+          <h2>一次報工，留下完整紀錄</h2>
+          <p>使用者只填寫這次作業的結果，工單與製程資料沿用系統內已有內容。</p>
+        </div>
+        <ol class="case-step-list">
+          <li class="reveal"><span>01</span><div><h3>選擇生產工單</h3><p>查看工單、產品與預計數量。</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>選擇作業製程</h3><p>確認本次作業所在製程。</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>填寫作業結果</h3><p>輸入良品、不良品與備註。</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>確認後送出</h3><p>再次核對工單、製程與數量。</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>更新紀錄與進度</h3><p>保存本次紀錄並更新累計數量。</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section case-screens">
+      <div class="container">
+        <div class="case-section-heading reveal">
+          <p class="eyebrow">System Views</p>
+          <h2>三個畫面，從輸入到查詢</h2>
+          <p>以下介面以純 HTML 與 CSS 製作，僅用來說明資料如何輸入與呈現。</p>
+        </div>
+
+        <article class="screen-showcase reveal">
+          <div class="screen-copy"><span>01 · 報工操作</span><h3>只填寫這次完成的工作</h3><p>工單、產品與製程先帶入畫面。操作人員輸入良品、不良品和備註，確認後送出。</p></div>
+          <div class="system-screen report-form" aria-label="報工操作示意畫面">
+            <div class="mock-window-head"><span>新增報工紀錄</span><i>示範畫面</i></div>
+            <div class="form-grid">
+              <label>生產工單<strong>WO-2026-0018</strong></label>
+              <label>產品名稱<strong>展示產品 A</strong></label>
+              <label>作業製程<strong>第一道製程</strong></label>
+              <label>操作人員<strong>操作人員 01</strong></label>
+              <label>良品數量<strong>80</strong></label>
+              <label>不良品數量<strong>2</strong></label>
+              <label class="form-wide">備註<strong>示範備註內容</strong></label>
+            </div>
+            <button type="button" class="mock-submit" disabled>確認並送出</button>
+          </div>
+        </article>
+
+        <article class="screen-showcase screen-reverse reveal">
+          <div class="screen-copy"><span>02 · 報工紀錄</span><h3>每次送出都有時間與人員紀錄</h3><p>查詢時可以依工單或製程找到過去紀錄，不必再翻紙本或逐一詢問。</p></div>
+          <div class="system-screen record-screen" aria-label="報工紀錄示意畫面">
+            <div class="mock-window-head"><span>報工紀錄</span><i>共 3 筆示範資料</i></div>
+            <div class="record-table">
+              <div class="record-row record-head"><span>報工時間</span><span>工單</span><span>製程</span><span>良品</span><span>不良</span><span>操作人員</span></div>
+              <div class="record-row"><span>2026-07-18 14:20</span><span>WO-2026-0018</span><span>第一道製程</span><span>80</span><span>2</span><span>操作人員 01</span></div>
+              <div class="record-row"><span>2026-07-18 10:35</span><span>WO-2026-0018</span><span>第一道製程</span><span>120</span><span>3</span><span>操作人員 01</span></div>
+              <div class="record-row"><span>2026-07-17 16:10</span><span>WO-2026-0018</span><span>第一道製程</span><span>120</span><span>3</span><span>操作人員 01</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="screen-showcase reveal">
+          <div class="screen-copy"><span>03 · 生產進度</span><h3>不用等報表，直接查看累計數量</h3><p>預計數量、累計良品與累計不良放在同一個畫面，並以報工紀錄計算目前進度。</p></div>
+          <div class="system-screen progress-screen" aria-label="生產進度示意畫面">
+            <div class="mock-window-head"><span>工單進度</span><i>資料已更新</i></div>
+            <div class="progress-screen-top"><div><small>WO-2026-0018</small><strong>展示產品 A</strong><span>第一道製程</span></div><div class="progress-value"><strong>64%</strong><span>目前進度</span></div></div>
+            <div class="progress-track"><i></i></div>
+            <div class="progress-metrics"><div><small>預計數量</small><strong>500</strong></div><div><small>累計良品</small><strong>320</strong></div><div><small>累計不良</small><strong>8</strong></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted integration-section">
+      <div class="container integration-layout">
+        <div class="integration-copy reveal">
+          <p class="eyebrow">ERP / MES</p>
+          <h2>可以與既有 ERP／MES 交換資料</h2>
+          <p>實際專案可依企業現有系統提供的 API、資料庫或檔案格式，取得工單、產品、製程與預計數量。</p>
+          <p>報工完成後，也可以依雙方確認的規則，將數量、工時或完成狀態回傳至 ERP／MES。</p>
+          <p class="integration-note">本案例使用虛構資料展示操作方式，目前沒有連接任何企業的正式系統。</p>
+        </div>
+        <div class="data-flow reveal" aria-label="ERP MES 與報工系統資料交換流程">
+          <div class="flow-node"><small>來源系統</small><strong>ERP／MES</strong></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-node"><small>輸入資料</small><strong>工單與製程</strong></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-node flow-node-primary"><small>現場作業</small><strong>報工系統</strong></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-node"><small>作業結果</small><strong>良品／不良品與工時</strong></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-node"><small>資料去向</small><strong>ERP／MES 或管理報表</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fit-section">
+      <div class="container fit-grid">
+        <article class="fit-card reveal">
+          <p class="eyebrow">Suitable For</p>
+          <h2>適用情境</h2>
+          <ul>
+            <li>有工單與製程管理需求的生產現場</li>
+            <li>目前仍使用紙本、Excel 或訊息回報</li>
+            <li>希望集中保存報工與進度紀錄</li>
+            <li>需要與既有 ERP／MES 交換資料</li>
+          </ul>
+        </article>
+        <article class="fit-card fit-card-limit reveal">
+          <p class="eyebrow">Limitations</p>
+          <h2>需要先確認的事</h2>
+          <ul>
+            <li>實際欄位與操作方式需依企業現況調整</li>
+            <li>ERP／MES 串接方式取決於現有系統能力</li>
+            <li>本頁是靜態示範，不是正式連線環境</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section-grid">
+      <div class="container contact-card reveal">
+        <div><p class="eyebrow">Contact FlowForge</p><h2>想把現場報工改得更簡單？</h2><p>可以先說明目前用紙本、Excel 還是既有系統，以及最常重複輸入的資料。FlowForge 會一起看看哪些步驟值得先處理。</p></div>
+        <a class="button button-light" href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">透過 LINE 諮詢 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="/#home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>FlowForge</span></a><p>Business Automation &amp; Digital Solutions<br>企業流程自動化與客製化系統服務</p></div>
+      <div class="footer-links"><a href="/#solutions">Solutions</a><a href="/#services">Services</a><a href="/#cases">Case Studies</a><a href="/#about">About</a></div>
+      <div class="footer-meta"><a href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://www.instagram.com/1ul_1025/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://github.com/s96405" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Copyright © <span data-year></span> FlowForge. All rights reserved.</span><a href="#main-content">回到頁首 ↑</a></div>
+  </footer>
+</body>
+</html>

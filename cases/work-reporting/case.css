@@ -6,6 +6,7 @@
 .case-back:hover { color: var(--color-accent-strong); }
 .case-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0; padding: 0; list-style: none; }
 .case-tags li { padding: .45rem .72rem; color: var(--color-accent-strong); background: var(--color-accent-soft); border: 1px solid rgba(59,130,246,.24); border-radius: 2rem; font-size: .7rem; font-weight: 700; }
+.case-hero-actions { margin-top: var(--space-5); }
 
 .case-hero-preview, .system-screen { position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(18,36,58,.97), rgba(9,23,40,.98)); border: 1px solid var(--color-line-strong); border-radius: var(--radius-lg); box-shadow: var(--shadow-card), var(--shadow-glow); }
 .case-hero-preview { min-height: 465px; padding: 4.5rem 2rem 2rem; }

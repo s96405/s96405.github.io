@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FlowForge 報工系統體驗版。使用虛構資料體驗新增報工、紀錄查詢與生產進度更新。">
+  <meta name="theme-color" content="#07111f">
+  <title>報工系統體驗版｜FlowForge</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="../../script.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="/#home" aria-label="FlowForge 首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>FlowForge</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟導覽選單">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="主要導覽">
+        <a href="/#home">Home</a>
+        <a href="/#solutions">Solutions</a>
+        <a href="/#services">Services</a>
+        <a href="/#cases">Case Studies</a>
+        <a href="/#about">About</a>
+        <a class="nav-cta" href="#report-form">開始體驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="demo-main">
+    <section class="demo-intro section-grid">
+      <div class="container demo-intro-inner">
+        <a class="demo-back" href="/cases/work-reporting/">← 返回報工系統案例</a>
+        <p class="eyebrow"><span class="status-dot"></span> Product Experience · Local Browser Data</p>
+        <h1>報工系統體驗版</h1>
+        <p>選擇工單與製程，完成一次報工，查看紀錄與生產進度如何更新。</p>
+      </div>
+    </section>
+
+    <section class="test-warning" aria-labelledby="warning-title">
+      <div class="container warning-layout">
+        <div class="warning-mark" aria-hidden="true">!</div>
+        <div>
+          <p class="warning-label">操作體驗環境</p>
+          <h2 id="warning-title">使用虛構資料，未連接正式 ERP／MES</h2>
+          <p>資料只保存在目前瀏覽器，不會傳送至伺服器。請勿輸入公司機密或個人資料。</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="system-nav" aria-label="體驗版功能導覽">
+      <div class="container system-nav-inner">
+        <a href="#overview">總覽</a>
+        <a href="#report-form">新增報工</a>
+        <a href="#records">報工紀錄</a>
+      </div>
+    </nav>
+
+    <div class="container recovery-message" id="recovery-message" role="status" hidden></div>
+
+    <section class="overview-section" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="overview-heading"><div><p class="panel-kicker">Overview</p><h2 id="overview-title">生產總覽</h2></div><span>依目前瀏覽器資料即時更新</span></div>
+        <div class="overview-grid">
+          <article class="overview-card"><span>進行中工單</span><strong id="metric-active-orders">0</strong><small>張</small></article>
+          <article class="overview-card"><span>今日報工筆數</span><strong id="metric-today-reports">0</strong><small>筆</small></article>
+          <article class="overview-card"><span>累計良品</span><strong id="metric-good-total">0</strong><small>件</small></article>
+          <article class="overview-card"><span>累計不良</span><strong id="metric-defect-total">0</strong><small>件</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section workspace-section" aria-label="新增報工與工單摘要">
+      <div class="container demo-workspace">
+        <section class="app-panel order-summary-panel" aria-labelledby="summary-title">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">Work Order</p><h2 id="summary-title">工單摘要</h2></div>
+            <span class="order-status" id="order-status">—</span>
+          </div>
+          <div class="selected-order">
+            <div><small>生產工單</small><strong id="summary-order-id">請先選擇工單</strong></div>
+            <div><small>產品名稱</small><strong id="summary-product">—</strong></div>
+          </div>
+          <div class="overall-progress">
+            <div class="progress-heading"><span>工單整體進度</span><strong id="overall-progress-value">0%</strong></div>
+            <div class="app-progress-track" role="progressbar" aria-label="工單整體進度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-progress-track"><i></i></div>
+          </div>
+          <div class="summary-metrics">
+            <div class="summary-metric-wide"><small>預計數量</small><strong id="summary-planned">—</strong></div>
+            <div class="summary-metric-wide summary-metric-primary"><small>目前製程可報數量</small><strong id="summary-process-remaining">—</strong></div>
+            <div><small>整體完成數量</small><strong id="summary-good">—</strong></div>
+            <div><small>整體未完成數量</small><strong id="summary-remaining">—</strong></div>
+            <div><small>累計不良</small><strong id="summary-defect">—</strong></div>
+          </div>
+          <div class="summary-process-section" aria-labelledby="summary-process-title">
+            <h3 id="summary-process-title">製程進度</h3>
+            <div class="process-progress-grid" id="process-progress-grid"></div>
+          </div>
+          <p class="summary-note" id="summary-progress-note">整體進度依最後一道必要製程的累計良品計算。</p>
+        </section>
+
+        <section class="app-panel report-form-panel" aria-labelledby="form-title">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">New Report</p><h2 id="form-title">新增報工</h2></div>
+          </div>
+          <p class="form-privacy-note">請只使用虛構資料。本測試不會將資料送往伺服器。</p>
+          <form id="report-form" novalidate>
+            <div class="field-group">
+              <label for="work-order">工單</label>
+              <select id="work-order" name="workOrderId" required aria-describedby="work-order-error">
+                <option value="">請選擇生產工單</option>
+              </select>
+              <p class="field-error" id="work-order-error"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="product-name">產品名稱</label>
+              <input id="product-name" type="text" value="請先選擇工單" readonly>
+            </div>
+
+            <div class="field-group">
+              <label for="process">製程</label>
+              <select id="process" name="processId" required aria-describedby="process-error" disabled>
+                <option value="">請先選擇工單</option>
+              </select>
+              <p class="field-error" id="process-error"></p>
+            </div>
+
+            <div class="quantity-grid">
+              <div class="field-group">
+                <label for="good-qty">良品數量</label>
+                <input id="good-qty" name="goodQty" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required aria-describedby="good-qty-help good-qty-error">
+                <p class="field-help" id="good-qty-help">選擇工單與製程後顯示可報數量。</p>
+                <p class="field-error" id="good-qty-error"></p>
+              </div>
+              <div class="field-group">
+                <label for="defect-qty">不良品數量</label>
+                <input id="defect-qty" name="defectQty" type="number" min="0" step="1" inputmode="numeric" value="0" aria-describedby="defect-qty-error">
+                <p class="field-error" id="defect-qty-error"></p>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <div class="label-row"><label for="remark">備註（選填）</label><span id="remark-count">還可輸入 200 字</span></div>
+              <textarea id="remark" name="remark" maxlength="200" rows="4" aria-describedby="remark-help remark-error" placeholder="例如：本次為虛構測試紀錄"></textarea>
+              <p class="field-help" id="remark-help">請勿輸入公司名稱、員工姓名、真實工單或其他機密資料。</p>
+              <p class="field-error" id="remark-error"></p>
+            </div>
+
+            <button class="app-primary-button" type="submit">確認報工</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <div class="container action-message" id="action-message" role="status" aria-live="polite" hidden></div>
+
+    <section class="demo-section records-section" id="records" aria-labelledby="records-title">
+      <div class="container">
+        <div class="demo-section-heading records-heading">
+          <div><p class="eyebrow">Reporting Records</p><h2 id="records-title">報工紀錄</h2></div>
+          <span id="record-count">0 筆紀錄</span>
+        </div>
+        <div class="record-filters" aria-label="報工紀錄篩選">
+          <label for="record-order-filter">工單篩選<select id="record-order-filter"><option value="">全部工單</option></select></label>
+          <label for="record-process-filter">製程篩選<select id="record-process-filter"><option value="">全部製程</option></select></label>
+          <button type="button" id="clear-record-filters">清除篩選</button>
+        </div>
+        <div class="records-table-wrap">
+          <table class="records-table">
+            <thead><tr><th>報工時間</th><th>工單</th><th>產品</th><th>製程</th><th>良品</th><th>不良品</th><th>備註</th><th>操作人員</th></tr></thead>
+            <tbody id="records-table-body"></tbody>
+          </table>
+        </div>
+        <div class="records-card-list" id="records-card-list"></div>
+        <p class="empty-state" id="records-empty" hidden>目前沒有報工紀錄。</p>
+      </div>
+    </section>
+
+    <section class="demo-section demo-management" aria-labelledby="management-title">
+      <div class="container management-grid">
+        <div>
+          <p class="eyebrow">Experience Data</p>
+          <h2 id="management-title">體驗資料管理</h2>
+          <p>重設後會刪除目前瀏覽器內新增的紀錄，並恢復三筆預設示範資料。</p>
+        </div>
+        <button class="app-secondary-button app-danger-button" type="button" id="open-reset-dialog">重設示範資料</button>
+      </div>
+    </section>
+
+    <section class="demo-section usage-limits" aria-labelledby="limits-title">
+      <div class="container limits-card">
+        <p class="eyebrow">Limitations</p>
+        <h2 id="limits-title">這個測試版不會做什麼</h2>
+        <ul>
+          <li>不會把資料傳送到 FlowForge 或其他伺服器</li>
+          <li>不會連接任何正式 ERP、MES 或企業資料庫</li>
+          <li>不提供登入、權限、多人同步或正式稽核紀錄</li>
+          <li>重新整理頁面後資料仍在；清除瀏覽器資料後則會消失，不同裝置也不會同步</li>
+        </ul>
+        <a class="demo-return-link" href="/cases/work-reporting/">← 返回報工系統案例</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="reset-dialog" id="reset-dialog" aria-labelledby="reset-title">
+    <form method="dialog" class="reset-dialog-card">
+      <div class="dialog-heading"><p class="panel-kicker">Reset Test Data</p><h2 id="reset-title">重設示範資料？</h2></div>
+      <p>這會刪除目前瀏覽器中的所有測試報工紀錄，並恢復預設示範資料。此動作無法復原。</p>
+      <label class="reset-confirm-label"><input type="checkbox" id="reset-confirm-check"> <span>我了解目前的測試紀錄會被清除</span></label>
+      <div class="dialog-actions">
+        <button class="app-secondary-button" type="button" id="cancel-reset">取消</button>
+        <button class="app-primary-button app-danger-confirm" type="button" id="confirm-reset" disabled>確認重設</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="/#home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>FlowForge</span></a><p>Business Automation &amp; Digital Solutions<br>企業流程自動化與客製化系統服務</p></div>
+      <div class="footer-links"><a href="/#solutions">Solutions</a><a href="/#services">Services</a><a href="/#cases">Case Studies</a><a href="/#about">About</a></div>
+      <div class="footer-meta"><a href="https://line.me/ti/p/90dKJ0dKEm" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://www.instagram.com/1ul_1025/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://github.com/s96405" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Copyright © <span data-year></span> FlowForge. All rights reserved.</span><a href="#main-content">回到頁首 ↑</a></div>
+  </footer>
+</body>
+</html>
